@@ -1,9 +1,13 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
+//Prefix to all commands
+const prefix = "/";
+
+//FS is needed for saving/loading
+const fs = require('fs');
 
 bot.commands = new Discord.Collection();
-
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
@@ -14,12 +18,6 @@ for (const file of commandFiles) {
 
 //Requires
 const Listener = require('./listener.js');
-
-//FS is needed for saving/loading
-const fs = require('fs');
-
-//Prefix to all commands
-const prefix = "/";
 
 //Listen for pings.
 Listener.Listen();
