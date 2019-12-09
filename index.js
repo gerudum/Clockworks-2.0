@@ -7,16 +7,15 @@ const Listener = require('./listener.js');
 const fs = require('fs');
 const prefix = "/";
 
+//Listen for pings.
 Listener.Listen();
-
-let data = JSON.parse(fs.readFileSync('.data/data.json','utf8'));
 
 bot.on('guildMemberAdd', member => {
     member.guild.channels.get('channelID').send("Welcome " + member.displayName); 
 });
 
 bot.on('ready', () => {
-    console.log("Raring to go!");
+    console.log("Ready.");
 })
 
 bot.on('message', message=> {
