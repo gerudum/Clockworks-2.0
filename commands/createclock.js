@@ -1,7 +1,10 @@
+//FS is needed for saving/loading
+const fs = require('fs');
+
 module.exports = {
-	name: 'createcloak',
+	name: 'createclock',
 	description: 'Creates a timer for a depth!',
 	execute(message, args) {
-		message.channel.send('Pong.');
+		console.log("Executed " + args);
 	},
 };
