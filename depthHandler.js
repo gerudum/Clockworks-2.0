@@ -8,9 +8,9 @@ function ShiftArrayToRight(arr, places) {
     return arr;
 }
 
-function CycleLevels(depth, direction = "right"){
+function CycleLevels(depth){
   //Check the direction to swap in
-  switch(direction){
+  switch(depth.direction){
     //Move the array in that direction, level on the outside will wrap around
     case 'right':
        depth.levels = ShiftArrayToRight(depth.levels,1);
@@ -23,9 +23,9 @@ function CycleLevels(depth, direction = "right"){
   depth.nextRotation = DateHandler.OffsetDate(depth.nextRotation,depth.rotationTime); 
 }
 
-function CycleMarker(depth, direction = "right"){
+function CycleMarker(depth){
   //Check which direction to swap in
-  switch(direction){
+  switch(depth.direction){
     //Move the array in that direction, level on the outside will wrap around
     case 'right':
        depth.marker = ShiftArrayToRight(depth.marker,1);
