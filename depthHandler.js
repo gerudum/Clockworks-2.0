@@ -20,7 +20,11 @@ function CycleLevels(depth){
     break;
   }
   
-  depth.nextRotation = DateHandler.OffsetDate(depth.nextRotation,depth.rotationTime); 
+  //Getting the next time we should offset by
+  depth.rotationIndex += 1;
+  if(depth.rotationIndex >= depth.rotationTime.length;) { depth.rotationIndex = 0; }
+    
+  depth.nextRotation = DateHandler.OffsetDate(depth.nextRotation,depth.rotationTime[depth.rotationIndex]); 
 }
 
 function CycleMarker(depth){
@@ -35,7 +39,11 @@ function CycleMarker(depth){
     break;
   }
   
-  depth.nextMarkerRotation = DateHandler.OffsetDate(depth.nexxMarkerRotation,depth.markerRotationTime);
+  //Get the next time we should offset by 
+  depth.markerRotationIndex += 1;
+  if(depth.markerRotationIndex >= depth.markerRotationTime.length) { depth.markerRotationIndex = 0; }
+    
+  depth.nextMarkerRotation = DateHandler.OffsetDate(depth.nexxMarkerRotation,depth.markerRotationTime[depth.markerRotationIndex]);
 }
 
 
